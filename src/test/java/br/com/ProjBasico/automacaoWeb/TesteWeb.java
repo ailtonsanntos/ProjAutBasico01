@@ -18,16 +18,16 @@ public class TesteWeb {
         driverWeb = new Driver("chrome");
         driver = driverWeb.getDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.chronosacademy.com.br");
+        driver.get("http://www.voeazul.com.br");
 
     }
 
     @Test
     public void primeiroTeste(){
-        String xpathTitulo = "/html/body/div/div/div/div/div/section[2]/div[3]/div/div/div/div/div[1]/div/h4";
-        WebElement txtTitulo = driver.findElement(By.xpath(xpathTitulo));
+        String xpathTitulo = "#spa-root > main > div > div.aem-page.AzulPage.page.basicpage > div > div.aem-container.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div:nth-child(3) > div.aem-container.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--tablet--12.aem-Grid--phone--12 > div:nth-child(5) > div.container-capsule.containerDefault.css-1pkuz94 > div:nth-child(1) > div.text-container.css-1ig5eym > h2 > span";
+        WebElement txtTitulo = driver.findElement(By.cssSelector(xpathTitulo));
         String titulo = txtTitulo.getText();
-        assertEquals("Porque Tempo É Conhecimento", titulo);
+        assertEquals("Nossas melhores ofertas para você", titulo);
 
         driver.close();
     }
